@@ -523,3 +523,29 @@ footer details.fcol summary::-webkit-details-marker{display:none}
 }
 .swipe-hint{display:none;font-size:.8rem;color:var(--muted);margin-top:-10px;margin-bottom:10px}
 @media(max-width:680px){.pgrid{scroll-padding-inline:16px}}
+
+/* ===== menu principal em faixa amarela ===== */
+.top{border-bottom:0}
+.top nav{background:var(--yellow);border-radius:999px;padding:6px 8px;gap:2px}
+.top nav a{color:var(--ink);font-weight:700;padding:8px 14px;border-radius:999px;text-decoration:none!important;transition:background .15s}
+.top nav a:hover{background:rgba(0,0,0,.08)}
+.top nav a[aria-current="page"]{background:var(--ink);color:var(--yellow)}
+.top nav .ig-link{padding:8px 10px}
+@media(max-width:900px){
+  .top{padding-bottom:0}
+  .top nav{width:100%;border-radius:14px;justify-content:space-between}
+}
+@media(max-width:680px){
+  .top nav{flex-wrap:nowrap;overflow-x:auto;padding:5px;gap:0;justify-content:space-between}
+  .top nav a{padding:8px 10px;font-size:.84rem;white-space:nowrap}
+  .top nav .ig-link{padding:8px 8px}
+}
+@media(max-width:360px){.top nav a{padding:8px 7px;font-size:.78rem}}
+.top + *{margin-top:14px}
+@media(max-width:680px){
+  .top nav{display:grid;grid-template-columns:auto auto auto auto 34px 34px;justify-content:space-between;overflow:visible;padding:4px}
+  .top nav a{padding:8px 6px;font-size:.8rem;text-align:center}
+  .top nav .ig-link{padding:8px 0;justify-content:center}
+}
+@media(max-width:370px){.top nav a{font-size:.74rem;padding:8px 4px}.top nav{grid-template-columns:auto auto auto auto 28px 28px}}
+.top nav a[aria-current="page"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
