@@ -12,7 +12,8 @@
      8.  Loja (filtros, produtos, carrinho)
      9.  Hospital (procedimentos, equipe, localização, mapa)
      10. Rodapé
-     11. Acessibilidade e movimento
+     11. Página de texto (Política de Privacidade)
+     12. Acessibilidade e movimento
 
    Pontos de quebra (largura máxima):
      1100px  vitrine com 3 produtos por linha
@@ -2251,7 +2252,64 @@ h3 {
 
 
 /* ==========================================================================
-   11. Acessibilidade e movimento
+   11. Página de texto (Política de Privacidade)
+   ========================================================================== */
+.texto-legal {
+  max-width: 760px;
+  padding-block: 38px 56px;
+}
+
+.texto-legal-topo {
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.texto-legal-topo h1 {
+  margin: 10px 0 8px;
+}
+
+.texto-legal section + section {
+  margin-top: 26px;
+}
+
+.texto-legal h2 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.texto-legal p {
+  color: var(--cor-suave);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.texto-legal a {
+  color: var(--cor-texto);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.rodape-copy a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 680px) {
+  .texto-legal {
+    padding-block: 22px 36px;
+  }
+  .texto-legal h2 {
+    font-size: 1.1rem;
+  }
+  .texto-legal p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ==========================================================================
+   12. Acessibilidade e movimento
    ========================================================================== */
 a:focus-visible,
 button:focus-visible,

@@ -41,7 +41,7 @@
           '<img src="' + Recopa.esc(b.img) + '" alt="' + Recopa.esc(b.alt) + '" width="1600" height="400"' +
           (i ? ' loading="lazy"' : "") + ' draggable="false">';
         var conteudo = link
-          ? '<a href="' + Recopa.esc(link) + '"' + (externo ? ' target="_blank" rel="noopener"' : "") + ">" + img + "</a>"
+          ? '<a href="' + Recopa.esc(link) + '"' + (externo ? ' target="_blank" rel="noopener noreferrer"' : "") + ">" + img + "</a>"
           : img;
         return (
           '<div class="carrossel-slide" role="group" aria-roledescription="banner" aria-label="' +

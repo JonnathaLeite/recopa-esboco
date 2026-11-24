@@ -37,7 +37,7 @@ from playwright.sync_api import sync_playwright
 PASTA = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 PORTA = 8765
 BASE = f"http://127.0.0.1:{PORTA}"
-PAGINAS = ["index", "petshop", "hospital"]
+PAGINAS = ["index", "petshop", "hospital", "privacidade"]
 LARGURAS = [360, 375, 390, 414, 768, 1024, 1366, 1920]
 FONTES_LOCAIS = os.environ.get("FONTES_LOCAIS", "")  # opcional: pasta @fontsource
 
@@ -220,8 +220,8 @@ def testar_links_e_acessibilidade(navegador):
                     problemas.append(f"{nome}: e-mail inválido {href}")
             elif href.startswith("http"):
                 qtd["externos"] += 1
-                if l["alvo"] != "_blank" or "noopener" not in l["rel"]:
-                    problemas.append(f"{nome}: link externo sem nova aba/noopener ({l['texto']})")
+                if l["alvo"] != "_blank" or "noopener" not in l["rel"] or "noreferrer" not in l["rel"]:
+                    problemas.append(f"{nome}: link externo sem nova aba/noopener noreferrer ({l['texto']})")
             else:
                 qtd["internos"] += 1
                 pagina, _, ancora = href.partition("#")
