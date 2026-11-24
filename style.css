@@ -406,3 +406,120 @@ h3{font-weight:600;letter-spacing:-.01em}
 .transport>div{min-width:0}
 @media(max-width:400px){.eco-tags span{font-size:.66rem;padding:4px 7px}.eco-tags{gap:4px}}
 @media(max-width:370px){.eco-tags{flex-wrap:wrap}}
+
+/* =====================================================================
+   REVISÃO FINAL DE RESPONSIVIDADE (celular, tablet e notebook)
+   ===================================================================== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg{max-width:100%}
+
+/* --- banners do topo: sempre inteiros, sem cortar texto --- */
+.car-slide{aspect-ratio:4/1}
+@media(max-width:680px){.car-slide{aspect-ratio:4/1}.carousel .car-dots{margin:6px auto}}
+
+/* --- etiquetas do transporte: ícones próprios, nunca vazam --- */
+.eco-tags{display:flex;flex-wrap:nowrap;gap:8px;margin-top:18px}
+.eco-tags span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:.8rem;padding:6px 12px}
+.eco-tags svg{width:15px;height:15px;flex:0 0 auto}
+@media(max-width:680px){
+  .eco-tags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .eco-tags span{justify-content:center;white-space:normal;text-align:center;line-height:1.15;font-size:.72rem;padding:7px 6px;min-height:38px}
+  .eco-tags svg{width:13px;height:13px}
+}
+@media(max-width:360px){.eco-tags span{flex-direction:column;gap:3px;font-size:.68rem}}
+
+/* --- loja: painel de categorias --- */
+.side-toggle{display:none}
+.more-wrap{display:flex;justify-content:center;margin-top:18px}
+.more-wrap .button[hidden]{display:none}
+@media(max-width:900px){
+  .shop{gap:14px}
+  .side{padding:12px}
+  .side-toggle{display:flex;width:100%;justify-content:space-between;align-items:center;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);font:inherit;cursor:pointer;text-align:left;color:var(--ink)}
+  .side-toggle small{display:block;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+  .side-toggle b{font-size:.95rem}
+  .side-toggle .chev{transition:transform .2s;font-size:1rem}
+  .side.open .side-toggle .chev{transform:rotate(180deg)}
+  .side-body{display:none;margin-top:8px}
+  .side.open .side-body{display:block}
+  #vitrine{scroll-margin-top:12px}
+}
+
+/* --- carrinho: botão compacto e sem cobrir conteúdo no celular --- */
+@media(max-width:680px){
+  .cart-fab{right:12px;bottom:12px;padding:10px 14px;font-size:.88rem}
+  body:has(.cart-fab){padding-bottom:72px}
+  .drawer{width:100%}
+}
+
+/* --- rodapé: uma coluna no celular, sem textos espremidos --- */
+@media(max-width:600px){
+  .foot-grid{grid-template-columns:1fr;gap:18px}
+  .foot-grid a,.foot-grid p{font-size:.9rem}
+  footer{padding-block:26px 20px}
+}
+
+/* --- textos e espaçamentos no celular --- */
+@media(max-width:680px){
+  h1{font-size:1.85rem}
+  h2{font-size:1.45rem}
+  .intro{font-size:.98rem}
+  .section{padding-block:28px}
+  .hero{gap:20px}
+  .cover{min-height:280px}
+  .cover-text b{font-size:4.2rem}
+  .pagehero{padding-block:22px;gap:18px}
+  .actions .button{flex:1 1 auto}
+  .transport h2{font-size:1.4rem}
+  .go .txt{padding:16px}
+}
+/* tablet */
+@media(min-width:681px) and (max-width:1024px){
+  h1{font-size:2.3rem}
+  .cover{min-height:340px}
+}
+
+/* ===== rodapé (padrão de sites: marca + redes no topo, seções que abrem no celular) ===== */
+footer{background:#fff}
+.foot-grid{grid-template-columns:1.3fr 1fr 1fr .8fr}
+.foot-brand p{margin-top:10px;max-width:30ch}
+.foot-social{display:flex;gap:8px;margin-top:14px}
+.foot-social .soc{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid!important;place-items:center;padding:0!important}
+.foot-social .soc:hover{background:#333;text-decoration:none}
+.foot-social svg{width:19px;height:19px}
+footer details.fcol summary{list-style:none;cursor:default}
+footer details.fcol summary::-webkit-details-marker{display:none}
+.fcol-body{display:flex;flex-direction:column;gap:2px}
+.fcol-body a{line-height:1.45}
+@media(max-width:900px) and (min-width:681px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){
+  footer{padding-block:28px 18px}
+  .foot-grid{grid-template-columns:1fr;gap:0}
+  .foot-brand{text-align:center;display:flex;flex-direction:column;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .foot-brand p{margin-inline:auto}
+  footer details.fcol{border-bottom:1px solid var(--line)}
+  footer details.fcol summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:15px 2px;margin:0!important;font-size:.95rem!important}
+  footer details.fcol summary::after{content:"+";font-size:1.3rem;font-weight:400;line-height:1;transition:transform .2s}
+  footer details.fcol[open] summary::after{transform:rotate(45deg)}
+  .fcol-body{padding:0 2px 14px}
+  .fcol-body a{padding:7px 0;font-size:.92rem}
+  .copy{text-align:center;border-top:0;margin-top:16px}
+}
+
+/* ===== hospital no celular: procedimentos deslizando para o lado e equipe compacta ===== */
+@media(max-width:680px){
+  .pgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:2px 16px 10px;scrollbar-width:none}
+  .pgrid::-webkit-scrollbar{display:none}
+  .pcard{flex:0 0 82%;scroll-snap-align:start}
+  .pcard:hover{transform:none}
+  .swipe-hint{display:block!important}
+  .team.two{grid-template-columns:1fr}
+  .team.two .vet{flex-direction:row}
+  .team.two .vet .ph{width:96px;min-height:0;aspect-ratio:auto;flex:0 0 96px}
+  .team.two .vet .ini{width:58px;height:58px;font-size:1.15rem}
+  .team.two .vet .ph small{display:none}
+  .team.two .vet .body{padding:14px}
+}
+.swipe-hint{display:none;font-size:.8rem;color:var(--muted);margin-top:-10px;margin-bottom:10px}
+@media(max-width:680px){.pgrid{scroll-padding-inline:16px}}
