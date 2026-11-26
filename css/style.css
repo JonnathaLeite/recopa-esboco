@@ -859,10 +859,6 @@ h3 {
   .transporte {
     grid-template-columns: 1fr;
   }
-  .transporte-carro {
-    width: min(100%, 460px);
-    margin-inline: auto;
-  }
 }
 
 @media (max-width: 680px) {
